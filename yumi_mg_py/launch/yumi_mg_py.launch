@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="yumi_mg_py" pkg="yumi_mg_py" type="yumi_traj_py.py" respawn="false" output="screen">
+  </node>
+
+</launch>

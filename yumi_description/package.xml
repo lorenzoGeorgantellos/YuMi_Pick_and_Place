@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>yumi_description</name>
+  <version>1.0.0</version>
+  <description>The yumi_description package only URDF for Robotic 1 project</description>
+
+  <maintainer email="l.georgantellos1@studenti.poliba.it">Lorenzo Georgantellos</maintainer>
+
+  <license>BSD</license>
+
+  <author email="robert.krug@oru.se">Robert Krug</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>xacro</exec_depend>
+</package>

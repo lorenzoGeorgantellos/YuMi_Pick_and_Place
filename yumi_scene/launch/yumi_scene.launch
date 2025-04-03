@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="yumi_scene" pkg="yumi_scene"
+    type="yumi_scene.py" respawn="false" output="screen">
+  </node>
+
+</launch>

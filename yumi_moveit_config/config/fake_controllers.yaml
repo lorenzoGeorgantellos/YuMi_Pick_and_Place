@@ -1,0 +1,55 @@
+controller_list:
+  - name: fake_right_gripper_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - rightGripperBase_to_rightGripperR
+  - name: fake_left_gripper_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - leftGripperBase_to_leftGripperR
+  - name: fake_left_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - body_to_L1
+      - L1_to_L2
+      - L2_to_L3
+      - L3_to_L4
+      - L4_to_L5
+      - L5_to_L6
+      - L6_to_L7
+  - name: fake_right_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - body_to_R1
+      - R1_to_R2
+      - R2_to_R3
+      - R3_to_R4
+      - R4_to_R5
+      - yumi_joint_5_r
+      - yumi_joint_6_r
+  - name: fake_both_arms_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - body_to_L1
+      - L1_to_L2
+      - L2_to_L3
+      - L3_to_L4
+      - L4_to_L5
+      - L5_to_L6
+      - L6_to_L7
+      - body_to_R1
+      - R1_to_R2
+      - R2_to_R3
+      - R3_to_R4
+      - R4_to_R5
+      - yumi_joint_5_r
+      - yumi_joint_6_r
+initial:  # Define initial robot poses per group
+  - group: right_gripper
+    pose: right_gripper_start
+  - group: left_gripper
+    pose: left_gripper_start
+  - group: left_arm
+    pose: left_arm_start
+  - group: right_arm
+    pose: right_arm_start

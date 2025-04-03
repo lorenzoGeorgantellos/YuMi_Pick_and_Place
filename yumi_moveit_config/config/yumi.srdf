@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="yumi">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="right_gripper">
+        <chain base_link="R7" tip_link="rightGripperR"/>
+    </group>
+    <group name="left_gripper">
+        <chain base_link="L7" tip_link="leftGripperR"/>
+    </group>
+    <group name="left_arm">
+        <chain base_link="body" tip_link="L7"/>
+    </group>
+    <group name="right_arm">
+        <chain base_link="body" tip_link="R7"/>
+    </group>
+    <group name="both_arms">
+        <group name="left_arm"/>
+        <group name="right_arm"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="left_gripper_start" group="left_gripper">
+        <joint name="leftGripperBase_to_leftGripperR" value="0.0013"/>
+    </group_state>
+    <group_state name="right_gripper_start" group="right_gripper">
+        <joint name="rightGripperBase_to_rightGripperR" value="0.0013"/>
+    </group_state>
+    <group_state name="left_arm_start" group="left_arm">
+        <joint name="L1_to_L2" value="-0.5"/>
+        <joint name="L2_to_L3" value="0"/>
+        <joint name="L3_to_L4" value="0"/>
+        <joint name="L4_to_L5" value="0"/>
+        <joint name="L5_to_L6" value="0"/>
+        <joint name="L6_to_L7" value="0"/>
+        <joint name="body_to_L1" value="0.4"/>
+    </group_state>
+    <group_state name="right_arm_start" group="right_arm">
+        <joint name="R1_to_R2" value="-0.5"/>
+        <joint name="R2_to_R3" value="0"/>
+        <joint name="R3_to_R4" value="0"/>
+        <joint name="R4_to_R5" value="0"/>
+        <joint name="body_to_R1" value="-0.4"/>
+        <joint name="yumi_joint_5_r" value="0"/>
+        <joint name="yumi_joint_6_r" value="0"/>
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="right_gripper" parent_link="R7" group="right_gripper" parent_group="right_arm"/>
+    <end_effector name="left_gripper" parent_link="L7" group="left_gripper" parent_group="left_arm"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="L1" link2="L2" reason="Adjacent"/>
+    <disable_collisions link1="L1" link2="L3" reason="Never"/>
+    <disable_collisions link1="L1" link2="L4" reason="Never"/>
+    <disable_collisions link1="L1" link2="R1" reason="Never"/>
+    <disable_collisions link1="L1" link2="body" reason="Adjacent"/>
+    <disable_collisions link1="L1" link2="table" reason="Never"/>
+    <disable_collisions link1="L2" link2="L3" reason="Adjacent"/>
+    <disable_collisions link1="L2" link2="table" reason="Never"/>
+    <disable_collisions link1="L3" link2="L4" reason="Adjacent"/>
+    <disable_collisions link1="L3" link2="L5" reason="Never"/>
+    <disable_collisions link1="L3" link2="L6" reason="Never"/>
+    <disable_collisions link1="L3" link2="L7" reason="Never"/>
+    <disable_collisions link1="L3" link2="leftGripperBase" reason="Never"/>
+    <disable_collisions link1="L3" link2="leftGripperL" reason="Never"/>
+    <disable_collisions link1="L3" link2="leftGripperR" reason="Never"/>
+    <disable_collisions link1="L3" link2="table" reason="Never"/>
+    <disable_collisions link1="L4" link2="L5" reason="Adjacent"/>
+    <disable_collisions link1="L4" link2="L6" reason="Never"/>
+    <disable_collisions link1="L4" link2="L7" reason="Never"/>
+    <disable_collisions link1="L4" link2="leftGripperBase" reason="Never"/>
+    <disable_collisions link1="L4" link2="leftGripperL" reason="Never"/>
+    <disable_collisions link1="L4" link2="leftGripperR" reason="Never"/>
+    <disable_collisions link1="L5" link2="L6" reason="Adjacent"/>
+    <disable_collisions link1="L5" link2="leftGripperL" reason="Never"/>
+    <disable_collisions link1="L5" link2="leftGripperR" reason="Never"/>
+    <disable_collisions link1="L5" link2="rightGripperBase" reason="Default"/>
+    <disable_collisions link1="L6" link2="L7" reason="Adjacent"/>
+    <disable_collisions link1="L6" link2="R5" reason="Default"/>
+    <disable_collisions link1="L6" link2="R6" reason="Default"/>
+    <disable_collisions link1="L6" link2="R7" reason="Default"/>
+    <disable_collisions link1="L6" link2="leftGripperBase" reason="Never"/>
+    <disable_collisions link1="L6" link2="leftGripperL" reason="Never"/>
+    <disable_collisions link1="L6" link2="leftGripperR" reason="Never"/>
+    <disable_collisions link1="L6" link2="rightGripperBase" reason="Default"/>
+    <disable_collisions link1="L7" link2="R6" reason="Default"/>
+    <disable_collisions link1="L7" link2="R7" reason="Default"/>
+    <disable_collisions link1="L7" link2="leftGripperBase" reason="Adjacent"/>
+    <disable_collisions link1="L7" link2="leftGripperL" reason="Never"/>
+    <disable_collisions link1="L7" link2="leftGripperR" reason="Never"/>
+    <disable_collisions link1="L7" link2="rightGripperBase" reason="Default"/>
+    <disable_collisions link1="R1" link2="R2" reason="Adjacent"/>
+    <disable_collisions link1="R1" link2="R3" reason="Never"/>
+    <disable_collisions link1="R1" link2="body" reason="Adjacent"/>
+    <disable_collisions link1="R1" link2="table" reason="Never"/>
+    <disable_collisions link1="R2" link2="R3" reason="Adjacent"/>
+    <disable_collisions link1="R2" link2="table" reason="Never"/>
+    <disable_collisions link1="R3" link2="R4" reason="Adjacent"/>
+    <disable_collisions link1="R3" link2="R5" reason="Never"/>
+    <disable_collisions link1="R3" link2="R6" reason="Never"/>
+    <disable_collisions link1="R3" link2="R7" reason="Never"/>
+    <disable_collisions link1="R3" link2="rightGripperBase" reason="Never"/>
+    <disable_collisions link1="R3" link2="rightGripperL" reason="Never"/>
+    <disable_collisions link1="R3" link2="rightGripperR" reason="Never"/>
+    <disable_collisions link1="R3" link2="table" reason="Never"/>
+    <disable_collisions link1="R4" link2="R5" reason="Adjacent"/>
+    <disable_collisions link1="R4" link2="R6" reason="Never"/>
+    <disable_collisions link1="R4" link2="R7" reason="Never"/>
+    <disable_collisions link1="R4" link2="rightGripperBase" reason="Never"/>
+    <disable_collisions link1="R4" link2="rightGripperL" reason="Never"/>
+    <disable_collisions link1="R4" link2="rightGripperR" reason="Never"/>
+    <disable_collisions link1="R5" link2="R6" reason="Adjacent"/>
+    <disable_collisions link1="R5" link2="rightGripperL" reason="Never"/>
+    <disable_collisions link1="R5" link2="rightGripperR" reason="Never"/>
+    <disable_collisions link1="R6" link2="R7" reason="Adjacent"/>
+    <disable_collisions link1="R6" link2="leftGripperBase" reason="Default"/>
+    <disable_collisions link1="R6" link2="rightGripperBase" reason="Never"/>
+    <disable_collisions link1="R6" link2="rightGripperL" reason="Never"/>
+    <disable_collisions link1="R6" link2="rightGripperR" reason="Never"/>
+    <disable_collisions link1="R7" link2="leftGripperBase" reason="Default"/>
+    <disable_collisions link1="R7" link2="leftGripperL" reason="Never"/>
+    <disable_collisions link1="R7" link2="rightGripperBase" reason="Adjacent"/>
+    <disable_collisions link1="R7" link2="rightGripperL" reason="Never"/>
+    <disable_collisions link1="R7" link2="rightGripperR" reason="Never"/>
+    <disable_collisions link1="body" link2="table" reason="Adjacent"/>
+    <disable_collisions link1="leftGripperBase" link2="leftGripperL" reason="Adjacent"/>
+    <disable_collisions link1="leftGripperBase" link2="leftGripperR" reason="Adjacent"/>
+    <disable_collisions link1="leftGripperBase" link2="rightGripperBase" reason="Default"/>
+    <disable_collisions link1="leftGripperL" link2="leftGripperR" reason="Default"/>
+    <disable_collisions link1="leftGripperL" link2="rightGripperL" reason="Never"/>
+    <disable_collisions link1="leftGripperL" link2="rightGripperR" reason="Never"/>
+    <disable_collisions link1="leftGripperR" link2="rightGripperL" reason="Never"/>
+    <disable_collisions link1="leftGripperR" link2="rightGripperR" reason="Never"/>
+    <disable_collisions link1="rightGripperBase" link2="rightGripperL" reason="Adjacent"/>
+    <disable_collisions link1="rightGripperBase" link2="rightGripperR" reason="Adjacent"/>
+</robot>

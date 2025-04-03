@@ -1,0 +1,54 @@
+controller_list:
+  - name: right_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - R1_to_R2
+      - R2_to_R3
+      - R3_to_R4
+      - R4_to_R5
+      - yumi_joint_5_r
+      - yumi_joint_6_r
+  - name: right_gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - rightGripperBase_to_rightGripperR
+  - name: left_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - L1_to_L2
+      - L2_to_L3
+      - L3_to_L4
+      - L4_to_L5
+      - L5_to_L6
+      - L6_to_L7
+  - name: left_gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - leftGripperBase_to_leftGripperR
+  - name: both_arms_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - body_to_L1
+      - L1_to_L2
+      - L2_to_L3
+      - L3_to_L4
+      - L4_to_L5
+      - L5_to_L6
+      - L6_to_L7
+      - body_to_R1
+      - R1_to_R2
+      - R2_to_R3
+      - R3_to_R4
+      - R4_to_R5
+      - yumi_joint_5_r
+      - yumi_joint_6_r
