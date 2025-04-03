@@ -1,0 +1,16 @@
+TEMPI DI PIANIFICAZIONE:
+Planner di Default: RRTConnectkConfigDefault
+Tempo totale di pianificazione della prima traiettoria del braccio sinistro: 0.4705796241760254 secondi
+Planner di Default: RRTConnectkConfigDefault
+Tempo totale di pianificazione della seconda traiettoria del braccio sinistro: 0.5822851657867432 secondi
+Planner di Default: RRTConnectkConfigDefault
+Tempo totale di pianificazione della prima traiettoria del braccio destro: 0.4747788906097412 secondi
+Planner di Default: RRTConnectkConfigDefault
+Tempo totale di pianificazione della seconda traiettoria del braccio destro: 0.3587617874145508 secondi
+
+TEMPI DI ESECUZIONE:
+Tempo totale di esecuzione della prima traiettoria del braccio sinistro: 7.700067758560181 secondi
+Tempo totale di esecuzione della seconda traiettoria del braccio sinistro: 10.694605350494385 secondi
+Tempo totale di esecuzione della prima traiettoria del braccio destro: 4.599938869476318 secondi
+Tempo totale di esecuzione della seconda traiettoria del braccio destro: 3.3306639194488525 secondi
+

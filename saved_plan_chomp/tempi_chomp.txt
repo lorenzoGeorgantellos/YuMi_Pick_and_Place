@@ -1,0 +1,12 @@
+TEMPI DI PIANIFICAZIONE:
+Tempo totale di pianificazione della prima traiettoria del braccio sinistro: 8.506730318069458 secondi
+Tempo totale di pianificazione della seconda traiettoria del braccio sinistro: 8.21480417251587 secondi
+Tempo totale di pianificazione della prima traiettoria del braccio destro: 8.343173027038574 secondi
+Tempo totale di pianificazione della seconda traiettoria del braccio destro: 8.624005794525146 secondi
+
+TEMPI DI ESECUZIONE:
+Tempo totale di esecuzione della prima traiettoria del braccio sinistro: 5.000020265579224 secondi
+Tempo totale di esecuzione della seconda traiettoria del braccio sinistro: 2.9992258548736572 secondi
+Tempo totale di esecuzione della prima traiettoria del braccio destro: 4.699618101119995 secondi
+Tempo totale di esecuzione della seconda traiettoria del braccio destro: 3.4986937046051025 secondi
+

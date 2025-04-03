@@ -1,0 +1,16 @@
+TEMPI DI PIANIFICAZIONE:
+Planner di Default: FMTkConfigDefault
+Tempo totale di pianificazione della prima traiettoria del braccio sinistro: 0.436251163482666 secondi
+Planner di Default: FMTkConfigDefault
+Tempo totale di pianificazione della seconda traiettoria del braccio sinistro: 0.3834531307220459 secondi
+Planner di Default: FMTkConfigDefault
+Tempo totale di pianificazione della prima traiettoria del braccio destro: 0.47092747688293457 secondi
+Gripper impostato a 0.022 m
+Planner di Default: FMTkConfigDefault
+Tempo totale di pianificazione della seconda traiettoria del braccio destro: 0.3942081928253174 secondi
+
+TEMPI DI ESECUZIONE:
+Tempo totale di esecuzione della prima traiettoria del braccio sinistro: 8.000449419021606 secondi
+Tempo totale di esecuzione della seconda traiettoria del braccio sinistro: 3.6721863746643066 secondi
+Tempo totale di esecuzione della prima traiettoria del braccio destro: 4.599334716796875 secondi
+Tempo totale di esecuzione della seconda traiettoria del braccio destro: 3.351886749267578 secondi
